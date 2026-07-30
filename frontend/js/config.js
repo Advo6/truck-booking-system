@@ -1,4 +1,5 @@
 const API_BASE_URL = 'http://localhost:8080/api';
+window.API_BASE_URL = API_BASE_URL;
 
 const CONFIG = {
   businessName: 'Noko Transport',
