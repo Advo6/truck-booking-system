@@ -40,7 +40,6 @@ truck-booking-system/
 - MySQL 8.0+
 - A local web server for the frontend (Live Server, Python http.server, etc.)
 
-Maven is **not** required globally — the backend includes a Maven Wrapper (`mvnw.cmd` on Windows).
 
 ## Setup Instructions
 
