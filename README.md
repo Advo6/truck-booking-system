@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/screenshots/home.png" alt="Noko Transport home page" width="900" />
-</p>
-
 <h1 align="center">Noko Transport — Truck Booking System</h1>
 
 <p align="center">
