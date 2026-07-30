@@ -1,182 +1,130 @@
-# Truck Booking Management System
+<p align="center">
+  <img src="docs/screenshots/home.png" alt="Noko Transport home page" width="900" />
+</p>
 
-A modern, full-stack truck booking platform for **Noko Transport** — a business with two Code 14 trucks. Customers can check availability, make bookings, and receive confirmations. Admins manage bookings, trucks, and customers through a secure dashboard.
+<h1 align="center">Noko Transport — Truck Booking System</h1>
 
-## Technology Stack
+<p align="center">
+  A full-stack web application for managing Code 14 truck rentals — built with Spring Boot, MySQL, and vanilla JavaScript.
+</p>
 
-| Layer | Technology |
-|-------|-----------|
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-17-orange?style=flat-square" alt="Java 17" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-3.2-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot 3.2" />
+  <img src="https://img.shields.io/badge/MySQL-8-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL 8" />
+  <img src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript ES6" />
+  <img src="https://img.shields.io/badge/JWT-Auth-000000?style=flat-square&logo=jsonwebtokens" alt="JWT Auth" />
+</p>
+
+---
+
+## Overview
+
+Noko Transport is a truck booking platform where customers browse the fleet, check real-time availability, and place bookings online. Administrators manage bookings, trucks, and customers through a secure dashboard.
+
+This project demonstrates end-to-end software development — REST API design, database modelling, authentication, business logic, and a responsive frontend.
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/home.png" alt="Home page" width="100%" />
+      <br /><sub><b>Home</b> — Landing page with services and fleet preview</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/fleet.png" alt="Fleet page" width="100%" />
+      <br /><sub><b>Fleet</b> — Truck listings with availability status</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/booking.png" alt="Booking page" width="100%" />
+      <br /><sub><b>Booking</b> — Online form with interactive availability calendar</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/login.png" alt="Admin login" width="100%" />
+      <br /><sub><b>Admin Login</b> — JWT-secured authentication</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="docs/screenshots/dashboard.png" alt="Admin dashboard" width="100%" />
+      <br /><sub><b>Admin Dashboard</b> — Booking stats, revenue tracking, and fleet overview</sub>
+    </td>
+  </tr>
+</table>
+
+## Key Features
+
+**Customer-facing**
+- Interactive availability calendar (available, booked, pending)
+- Online booking with validation and unique booking references
+- Customer registration, login, and booking history
+- PDF booking confirmation download
+- Responsive layout with dark mode
+
+**Admin**
+- Dashboard with booking stats and revenue overview
+- Approve, reject, edit, and cancel bookings
+- Fleet and customer management
+- Calendar view and date-based booking filters
+
+## Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
 | Frontend | HTML5, CSS3, JavaScript (ES6) |
-| Backend | Java Spring Boot 3.2 (REST API) |
+| Backend | Java 17, Spring Boot 3.2, Spring Security, Spring Data JPA |
 | Database | MySQL 8 |
-| ORM | Spring Data JPA / Hibernate |
-| Auth | Spring Security + JWT |
-| Build | Maven |
+| Auth | JWT (JSON Web Tokens) |
+| Build | Maven Wrapper |
+
+## Skills Demonstrated
+
+- Full-stack architecture with a decoupled REST API and static frontend
+- JWT authentication with role-based access control (Admin / Customer)
+- Business logic — overlap detection, truck suggestions, scheduled booking expiry
+- Database design with JPA/Hibernate and MySQL
+- Production-minded config — environment variables, gitignored secrets, Maven Wrapper
+
+## Getting Started
+
+**Requirements:** Java 17+, MySQL 8+
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Advo6/truck-booking-system.git
+cd truck-booking-system
+
+# 2. Configure the database
+cp backend/src/main/resources/application.example.properties backend/src/main/resources/application.properties
+# Edit application.properties with your MySQL credentials
+
+# 3. Start the backend
+cd backend
+./mvnw spring-boot:run        # macOS / Linux
+.\mvnw.cmd spring-boot:run      # Windows (PowerShell)
+
+# 4. Start the frontend (new terminal)
+cd frontend
+python -m http.server 5500
+```
+
+Open **http://localhost:5500**
+
+**Demo admin login:** `admin` / `admin123`
 
 ## Project Structure
 
 ```
 truck-booking-system/
-├── frontend/          # Static HTML/CSS/JS website
-│   ├── index.html     # Home page
-│   ├── about.html
-│   ├── fleet.html
-│   ├── booking.html   # Booking form + calendar
-│   ├── contact.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html # Admin dashboard
-│   ├── css/
-│   └── js/
-├── backend/           # Spring Boot REST API
-│   └── src/main/java/com/truckbooking/
-└── database/
-    └── schema.sql
+├── frontend/     # Static HTML/CSS/JS client
+├── backend/      # Spring Boot REST API
+├── database/     # MySQL schema
+└── docs/         # Screenshots and documentation
 ```
-
-## Prerequisites
-
-- **Java 17+** (JDK, not just JRE — Spring Boot 3.2 requires it)
-- MySQL 8.0+
-- A local web server for the frontend (Live Server, Python http.server, etc.)
-
-
-## Setup Instructions
-
-### 1. Database
-
-```bash
-mysql -u root -p < database/schema.sql
-```
-
-Or let Spring Boot auto-create the schema (`spring.jpa.hibernate.ddl-auto=update`).
-
-### 2. Backend Configuration
-
-Copy the example config and add your local values:
-
-```bash
-cd backend/src/main/resources
-cp application.example.properties application.properties
-```
-
-Edit `application.properties` (this file is **gitignored** — never commit real passwords):
-
-```properties
-spring.datasource.username=root
-spring.datasource.password=your_mysql_password_here
-app.jwt.secret=your_long_random_secret_at_least_32_characters
-```
-
-Optional email configuration:
-
-```properties
-app.mail.enabled=true
-spring.mail.username=your-email@gmail.com
-spring.mail.password=your-gmail-app-password
-```
-
-You can also set environment variables instead: `DB_PASSWORD`, `JWT_SECRET`, `MAIL_USERNAME`, `MAIL_PASSWORD`.
-
-### 3. Install Java 17 (Windows)
-
-If `java -version` shows **1.8** (Java 8), install JDK 17 first:
-
-```powershell
-winget install EclipseAdoptium.Temurin.17.JDK
-```
-
-Close and reopen CMD/PowerShell, then set `JAVA_HOME` (adjust path if your install folder differs):
-
-```cmd
-setx JAVA_HOME "C:\Program Files\Eclipse Adoptium\jdk-17.0.19.10-hotspot"
-```
-
-Verify:
-
-```cmd
-java -version
-```
-
-You should see `openjdk version "17..."`.
-
-### 4. Run Backend
-
-```cmd
-cd backend
-.\mvnw.cmd spring-boot:run
-```
-
-In **CMD** you can use `mvnw.cmd` without `.\`; in **PowerShell** you must use `.\mvnw.cmd`.
-
-On first run, the wrapper downloads Maven automatically (no separate Maven install needed).
-
-API runs at `http://localhost:8080`
-
-### 5. Run Frontend
-
-Serve the `frontend/` folder with any static file server:
-
-```bash
-cd frontend
-python -m http.server 5500
-```
-
-Open `http://localhost:5500`
-
-
-## API Endpoints
-
-### Public
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/login` | Login |
-| POST | `/api/auth/register` | Register customer |
-| GET | `/api/trucks` | List trucks |
-| GET | `/api/trucks/{id}` | Get truck |
-| POST | `/api/bookings` | Create booking |
-| GET | `/api/bookings/reference/{ref}` | Get booking by reference |
-| GET | `/api/bookings/availability?year=&month=` | Calendar availability |
-| POST | `/api/contact` | Contact form |
-
-### Admin (JWT required)
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/admin/dashboard` | Dashboard statistics |
-| GET | `/api/admin/bookings` | List/search/filter bookings |
-| PATCH | `/api/admin/bookings/{id}/status` | Approve/reject/cancel |
-| PUT | `/api/admin/bookings/{id}` | Edit booking |
-| DELETE | `/api/admin/bookings/{id}` | Delete booking |
-| POST/PUT/DELETE | `/api/admin/trucks` | Manage trucks |
-| GET | `/api/admin/customers` | List customers |
-| GET | `/api/admin/calendar` | Admin calendar view |
-
-## Key Features
-
-- **Interactive booking calendar** — green (available), red (booked), orange (pending)
-- **Overlap prevention** — no double bookings on the same truck
-- **Auto truck suggestion** — suggests Truck 2 if Truck 1 is booked
-- **Booking reference generation** — unique reference per booking (e.g. `TB-A1B2C3D4`)
-- **Email confirmations** — configurable via SMTP
-- **Admin dashboard** — stats, booking management, truck status, customer history
-- **Dark mode toggle**
-- **WhatsApp integration**
-- **Google Maps** on contact page
-- **Print booking** confirmation
-- **Responsive design** — mobile, tablet, desktop
-
-## Business Rules
-
-1. Business owns exactly **two** Code 14 trucks
-2. One truck = one booking per date range (no overlaps)
-3. Booking automatically updates truck availability
-4. Expired bookings release trucks (daily scheduled task)
-5. Pickup date cannot be in the past
-6. Return date must be after pickup date
-
 
 ## License
 
-MIT — for educational and commercial use.
+MIT
