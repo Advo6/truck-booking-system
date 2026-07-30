@@ -1,0 +1,26 @@
+# Maven
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+*.env.local
+
+# Local secrets — use application.example.properties as the template
+backend/src/main/resources/application.properties
+
+# Node (if added later)
+node_modules/

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Truck | Noko Transport</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">🚛</div> Noko Transport</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="my-bookings.html">My Bookings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle">🌙</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Book a Truck</h1>
+      <p>Check availability and book one of our trucks online</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="grid-2" style="align-items:start">
+        <div>
+          <div id="booking-offline-notice" class="card" style="display:none;margin-bottom:1rem;padding:1rem;background:rgba(255,140,0,0.1);border-color:var(--secondary)">
+            <p style="font-size:0.9rem;color:var(--text-muted)">Backend offline — trucks shown from local data. Start the backend to submit bookings and see live availability.</p>
+          </div>
+          <form id="booking-form" class="card">
+            <h3 style="color:var(--primary);margin-bottom:1.5rem">Booking Details</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pickupAddress">Pickup Address *</label>
+              <input type="text" id="pickupAddress" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="deliveryAddress">Delivery Address *</label>
+              <input type="text" id="deliveryAddress" class="form-control" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pickupDate">Pickup Date *</label>
+                <input type="date" id="pickupDate" class="form-control" required readonly>
+              </div>
+              <div class="form-group">
+                <label for="returnDate">Return Date *</label>
+                <input type="date" id="returnDate" class="form-control" required readonly>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cargoDescription">Cargo Description</label>
+              <textarea id="cargoDescription" class="form-control" placeholder="Describe your cargo..."></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" class="form-control" min="0" step="0.1">
+              </div>
+              <div class="form-group">
+                <label for="specialInstructions">Special Instructions</label>
+                <input type="text" id="specialInstructions" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Truck Selection</label>
+              <div id="truck-selection" style="display:flex;flex-direction:column;gap:0.75rem"></div>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem">If your preferred truck is booked, we'll automatically suggest the alternate truck if available.</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Submit Booking</button>
+          </form>
+        </div>
+
+        <div>
+          <div class="card" style="margin-bottom:1.5rem">
+            <h3 style="color:var(--primary);margin-bottom:1rem">Availability Calendar</h3>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">Click a date for pickup, then click a later date for return. Red dates are unavailable.</p>
+            <div id="booking-calendar" class="calendar-container"></div>
+          </div>
+
+          <div class="card card-glass">
+            <h4 style="color:var(--primary);margin-bottom:0.75rem">Live Availability</h4>
+            <p style="font-size:0.9rem;color:var(--text-muted)">Green = Available · Red = Booked · Orange = Pending Approval</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="confirmation-section" class="card confirmation-card" style="display:none;margin-top:3rem">
+        <div class="confirmation-icon">✓</div>
+        <h2 style="color:var(--primary)">Booking Confirmed!</h2>
+        <p style="color:var(--text-muted);margin-bottom:1rem">Your booking has been submitted. A confirmation email will be sent shortly.</p>
+        <div id="confirmation-details"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="border:none;padding:0">
+      <p>&copy; 2026 Noko Transport. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/27821234567" class="fab fab-whatsapp" target="_blank">💬</a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/booking.js"></script>
+  <script>
+    // Pre-select truck from URL param
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const truckId = params.get('truck');
+      if (truckId) {
+        setTimeout(() => {
+          const radio = document.querySelector(`input[name="truckId"][value="${truckId}"]`);
+          if (radio) { radio.checked = true; calendar?.setTruckId(parseInt(truckId, 10)); }
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>

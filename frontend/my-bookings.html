@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings | Noko Transport</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">🚛</div> Noko Transport</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="my-bookings.html">My Bookings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle">🌙</button>
+        <a href="login.html" class="btn btn-outline btn-sm" id="nav-auth-link">Login</a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>My Bookings</h1>
+      <p>View your booking history and download confirmations</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div id="logged-in-section" style="display:none">
+        <div class="card" style="margin-bottom:1.5rem">
+          <p style="color:var(--text-muted)">Showing bookings for <strong id="user-email"></strong></p>
+        </div>
+      </div>
+
+      <div id="guest-lookup" class="card" style="margin-bottom:2rem;max-width:500px">
+        <h3 style="color:var(--primary);margin-bottom:1rem">Find Your Bookings</h3>
+        <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1rem">Enter the email address you used when booking.</p>
+        <form id="lookup-form">
+          <div class="form-group">
+            <label for="lookup-email">Email Address</label>
+            <input type="email" id="lookup-email" class="form-control" required placeholder="your@email.com">
+          </div>
+          <button type="submit" class="btn btn-primary">View Bookings</button>
+        </form>
+      </div>
+
+      <div id="bookings-list"></div>
+      <div id="no-bookings" class="card" style="display:none;text-align:center;padding:3rem">
+        <p style="color:var(--text-muted)">No bookings found.</p>
+        <a href="booking.html" class="btn btn-primary" style="margin-top:1rem">Make a Booking</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="border:none;padding:0">
+      <p>&copy; 2026 Noko Transport. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/my-bookings.js"></script>
+</body>
+</html>

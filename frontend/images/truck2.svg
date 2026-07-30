@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Noko Transport Truck 2">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#082a42"/>
+      <stop offset="100%" stop-color="#0B3C5D"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg2)"/>
+  <text x="400" y="180" fill="#FF8C00" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle">NOKO TRANSPORT</text>
+  <text x="400" y="220" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Truck 2 - Code 14</text>
+  <g transform="translate(200,260)" fill="#ffffff" opacity="0.9">
+    <rect x="0" y="40" width="280" height="60" rx="6"/>
+    <rect x="280" y="20" width="120" height="80" rx="8"/>
+    <rect x="20" y="100" width="50" height="30" rx="4" fill="#FF8C00"/>
+    <rect x="100" y="100" width="50" height="30" rx="4" fill="#FF8C00"/>
+    <rect x="310" y="100" width="50" height="30" rx="4" fill="#FF8C00"/>
+  </g>
+  <text x="400" y="430" fill="#ffffff" opacity="0.6" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Replace with images/truck2.jpg</text>
+</svg>

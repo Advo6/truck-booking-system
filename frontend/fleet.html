@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Fleet | Noko Transport</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">🚛</div> Noko Transport</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="my-bookings.html">My Bookings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle">🌙</button>
+        <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Fleet</h1>
+      <p>Two professionally maintained Code 14 trucks ready for your transport needs</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div id="fleet-offline-notice" class="card" style="display:none;margin-bottom:1.5rem;padding:1rem;text-align:center;background:rgba(255,140,0,0.1);border-color:var(--secondary)">
+        <p style="font-size:0.9rem;color:var(--text-muted)">Showing fleet from local data — start the backend to see live availability status.</p>
+      </div>
+      <div id="fleet-loading" style="text-align:center;padding:3rem">
+        <div class="spinner" style="margin:0 auto"></div>
+        <p style="margin-top:1rem;color:var(--text-muted)">Loading fleet...</p>
+      </div>
+      <div class="grid-2" id="fleet-grid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="border:none;padding:0">
+      <p>&copy; 2026 Noko Transport. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/truck-images.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/fleet.js"></script>
+</body>
+</html>

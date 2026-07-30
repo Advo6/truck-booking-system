@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noko Transport | Reliable Truck Booking</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚛</div>
+        Noko Transport
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="my-bookings.html">My Bookings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content fade-in">
+        <h1>Reliable <span>Noko</span> Truck Transport Services</h1>
+        <p>Book one of our trucks quickly and easily. Professional heavy-duty transport across South Africa.</p>
+        <div class="hero-buttons">
+          <a href="booking.html" class="btn btn-primary btn-lg">Book Now</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-image fade-in fade-in-delay-1">
+        <img src="images/truck1.jpg" alt="Noko Transport truck">
+        <div class="hero-badge">
+          <div>
+            <span class="number" data-count="2">0</span>
+            <small style="display:block;color:var(--text-muted);font-size:0.8rem">Code 14 Trucks</small>
+          </div>
+          <div style="font-size:0.85rem;color:var(--text-muted)">Ready to serve you</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <span class="section-tag">About Us</span>
+        <h2>Your Trusted Transport Partner</h2>
+        <p>We specialize in Code 14 heavy-duty truck services, delivering cargo safely and on time across the region.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card scroll-animate">
+          <h3 style="color:var(--primary);margin-bottom:1rem">Who We Are</h3>
+          <p style="color:var(--text-muted)">Noko Transport is a family-owned logistics company with two professionally maintained Code 14 trucks. We handle freight, construction materials, and bulk deliveries with precision and care.</p>
+        </div>
+        <div class="card scroll-animate">
+          <h3 style="color:var(--primary);margin-bottom:1rem">Our Commitment</h3>
+          <p style="color:var(--text-muted)">Every booking is handled with professionalism. Our online system lets you check availability in real time, book instantly, and receive confirmation — no phone tag required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background:var(--card)">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <span class="section-tag">Services</span>
+        <h2>What We Offer</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card scroll-animate">
+          <div class="service-icon">📦</div>
+          <h3>Freight Transport</h3>
+          <p style="color:var(--text-muted);margin-top:0.5rem">Long-haul and regional freight delivery with our 34-tonne Code 14 fleet.</p>
+        </div>
+        <div class="card scroll-animate">
+          <div class="service-icon">🏗️</div>
+          <h3>Construction Materials</h3>
+          <p style="color:var(--text-muted);margin-top:0.5rem">Safe transport of building materials, aggregates, and heavy equipment.</p>
+        </div>
+        <div class="card scroll-animate">
+          <div class="service-icon">⚡</div>
+          <h3>Express Delivery</h3>
+          <p style="color:var(--text-muted);margin-top:0.5rem">Time-sensitive cargo handled with priority scheduling and tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <span class="section-tag">Why Choose Us</span>
+        <h2>The Noko Advantage</h2>
+      </div>
+      <div class="grid-4">
+        <div class="card stat-card scroll-animate">
+          <span class="stat-number" data-count="100">0</span>
+          <span class="stat-label">% Licensed Drivers</span>
+        </div>
+        <div class="card stat-card scroll-animate">
+          <span class="stat-number" data-count="2">0</span>
+          <span class="stat-label">Code 14 Trucks</span>
+        </div>
+        <div class="card stat-card scroll-animate">
+          <span class="stat-number" data-count="24">0</span>
+          <span class="stat-label">Hour Support</span>
+        </div>
+        <div class="card stat-card scroll-animate">
+          <span class="stat-number" data-count="34">0</span>
+          <span class="stat-label">Tonnes Capacity</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fleet-preview" style="background:var(--card)">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <span class="section-tag">Our Fleet</span>
+        <h2>Two Powerful Code 14 Trucks</h2>
+        <p>Both trucks are fully maintained, insured, and ready for your next job.</p>
+      </div>
+      <div class="grid-2" id="home-fleet-preview">
+        <div class="card fleet-card scroll-animate">
+          <img src="images/truck1.jpg" alt="Truck 1 — Mercedes-Benz Actros">
+          <h3>Truck 1 — Mercedes-Benz Actros</h3>
+          <p style="color:var(--text-muted)">CA 123-456 GP · 34 Tonnes</p>
+          <span class="status-badge status-available">Available</span>
+        </div>
+        <div class="card fleet-card scroll-animate">
+          <img src="images/truck2.jpg" alt="Truck 2 — Volvo FH16">
+          <h3>Truck 2 — Volvo FH16</h3>
+          <p style="color:var(--text-muted)">CA 789-012 GP · 34 Tonnes</p>
+          <span class="status-badge status-available">Available</span>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="fleet.html" class="btn btn-primary">View Full Fleet</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <span class="section-tag">Testimonials</span>
+        <h2>What Our Clients Say</h2>
+      </div>
+      <div class="testimonial-slider scroll-animate">
+        <div class="testimonial-track" id="testimonial-track">
+          <div class="testimonial-slide">
+            <div class="testimonial-card card">
+              <p class="quote">"Excellent service! Booked online, truck arrived on time, and our cargo was delivered safely. Highly recommend Noko Transport."</p>
+              <p class="author">— Thabo M., Construction Manager</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card card">
+              <p class="quote">"The online booking system is so easy to use. I could see exactly when trucks were available and got instant confirmation."</p>
+              <p class="author">— Sarah K., Logistics Coordinator</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card card">
+              <p class="quote">"Professional drivers, well-maintained trucks, and competitive rates. Our go-to transport partner for heavy loads."</p>
+              <p class="author">— James N., Warehouse Manager</p>
+            </div>
+          </div>
+        </div>
+        <div class="slider-dots" id="slider-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-preview" style="background:var(--card)">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <span class="section-tag">Contact</span>
+        <h2>Get In Touch</h2>
+        <p>Ready to book? Contact us or use our online booking system.</p>
+      </div>
+      <div class="grid-3 scroll-animate">
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:0.5rem">📞</div>
+          <h4>Phone</h4>
+          <p style="color:var(--text-muted)">+27 82 123 4567</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:0.5rem">✉️</div>
+          <h4>Email</h4>
+          <p style="color:var(--text-muted)">info@nokotransport.co.za</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:0.5rem">📍</div>
+          <h4>Address</h4>
+          <p style="color:var(--text-muted)">123 Transport Road, Johannesburg</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:white;margin-bottom:1rem">
+            <div class="logo-icon">🚛</div> Noko Transport
+          </div>
+          <p>Professional Code 14 truck transport by Noko Transport. Book online, track availability, and get confirmed instantly.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="https://wa.me/27821234567" aria-label="WhatsApp">W</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Freight Transport</a></li>
+            <li><a href="booking.html">Construction Materials</a></li>
+            <li><a href="booking.html">Express Delivery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+27821234567">+27 82 123 4567</a></li>
+            <li><a href="mailto:info@nokotransport.co.za">info@nokotransport.co.za</a></li>
+            <li><a href="contact.html">Get Directions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Noko Transport. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/27821234567" class="fab fab-whatsapp" target="_blank" aria-label="WhatsApp">💬</a>
+  <button class="fab fab-top" aria-label="Back to top">↑</button>
+
+  <script src="js/config.js"></script>
+  <script src="js/truck-images.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Utils.animateCounters();
+
+      // Testimonial slider
+      const track = document.getElementById('testimonial-track');
+      const dots = document.getElementById('slider-dots');
+      const slides = track.children.length;
+      let current = 0;
+
+      for (let i = 0; i < slides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dots.appendChild(dot);
+      }
+
+      function goTo(index) {
+        current = index;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      setInterval(() => goTo((current + 1) % slides), 5000);
+
+      // Load fleet status (fallback to local truck images if API offline)
+      api.get('/trucks').then(res => {
+        const preview = document.getElementById('home-fleet-preview');
+        if (!preview || !res.data) return;
+        preview.innerHTML = res.data.map((t, i) => `
+          <div class="card fleet-card scroll-animate">
+            <img src="${TruckImages.src(i, t.image)}" alt="${t.truckNumber}" ${TruckImages.onerrorAttr(i, t.image)}>
+            <h3>${t.truckNumber}</h3>
+            <p style="color:var(--text-muted)">${t.registration} · ${t.capacity}</p>
+            <span class="status-badge ${Utils.statusClass(t.status)}">${Utils.formatStatus(t.status)}</span>
+          </div>
+        `).join('');
+      }).catch(() => {});
+    });
+  </script>
+</body>
+</html>
