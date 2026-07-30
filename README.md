@@ -125,14 +125,6 @@ python -m http.server 5500
 
 Open `http://localhost:5500`
 
-## Default Admin Credentials
-
-| Field | Value |
-|-------|-------|
-| Username | `admin` |
-| Password | `admin123` |
-
-> Change these credentials before deploying to production.
 
 ## API Endpoints
 
@@ -185,14 +177,6 @@ Open `http://localhost:5500`
 5. Pickup date cannot be in the past
 6. Return date must be after pickup date
 
-## Deployment Notes
-
-- Copy `application.example.properties` → `application.properties` on each machine
-- Set `app.jwt.secret` to a strong random key (never commit the real value)
-- Enable HTTPS in production
-- Configure CORS origins in `application.properties`
-- Set `app.mail.enabled=true` with valid SMTP credentials via env vars
-- Use environment variables for sensitive config (`DB_PASSWORD`, `JWT_SECRET`, `MAIL_USERNAME`, `MAIL_PASSWORD`)
 
 ## License
 
